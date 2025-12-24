@@ -1,0 +1,35 @@
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border: 1.5px solid;
+}
+
+/* Viền và màu chữ trùng nhau */
+.tag.text-primary {
+    color: #0d6efd;
+    /* màu bootstrap primary */
+    border-color: #0d6efd;
+    background-color: rgba(13, 110, 253, 0.1);
+    /* nền nhẹ cùng màu */
+}
+
+.tag.text-success {
+    color: #198754;
+    border-color: #198754;
+    background-color: rgba(25, 135, 84, 0.1);
+}
+
+.tag.text-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.tag.text-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}

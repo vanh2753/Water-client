@@ -1,0 +1,37 @@
+/* Chỉnh sửa phần chứa thông tin chung */
+.job-info {
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Phần general-info để chia cột */
+.gerneral-info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Các phần tử chứa thông tin đồng hồ và khách hàng */
+.meter-info,
+.customer-info {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+    .icon {
+        font-size: 1.2rem;
+        margin-right: 3px;
+        margin-bottom: 3px;
+    }
+}
