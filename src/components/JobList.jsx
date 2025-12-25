@@ -63,10 +63,10 @@ const JobList = () => {
         if (status === 'Đã cập nhật hệ thống') {
             return <span className="tag text-info">{status}</span>;
         }
-        if (status === 'Xúc xả thành công' || status === "Hoàn thiện hồ sơ") {
+        if (status === 'Kiểm tra thành công' || status === "Hoàn thiện hồ sơ") {
             return <span className="tag text-success">{status}</span>;
         }
-        if (status === 'Xúc xả thất bại') {
+        if (status === 'Chuyển thanh tra') {
             return <span className="tag text-danger">{status}</span>;
         }
         if (status === 'Chờ Thanh tra') {

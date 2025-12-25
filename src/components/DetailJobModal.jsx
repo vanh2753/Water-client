@@ -31,8 +31,8 @@ const DetailJobModal = (props) => {
         if (role === 'QLM' && task_type === 'Ghi thu') {
             return (
                 <div>
-                    <Button variant="primary" onClick={() => handleFlushing('Xúc xả thành công')} >Xúc xả thành công</Button>
-                    <Button variant="danger" onClick={() => handleFlushing('Xúc xả thất bại')} className='ms-2'>Xúc xả thất bại</Button>
+                    <Button variant="primary" onClick={() => handleFlushing('Kiểm tra thành công')} >Kiểm tra thành công</Button>
+                    <Button variant="danger" onClick={() => handleFlushing('Chuyển thanh tra')} className='ms-2'>Chuyển thanh tra</Button>
                 </div>
             );
         }
@@ -105,7 +105,7 @@ const DetailJobModal = (props) => {
 
     const handleFlushing = async (status) => {
         try {
-            if (status === 'Xúc xả thất bại') {
+            if (status === 'Chuyển thanh tra') {
                 const res = await handleflushing(jobData.job_id, status)
                 if (res.EC === 0) {
                     // Tắt modal

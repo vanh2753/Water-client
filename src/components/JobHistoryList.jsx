@@ -22,10 +22,10 @@ const JobHistoryList = () => {
         if (status === 'Mới') {
             return <span className="tag text-primary">{status}</span>;
         }
-        if (status === 'Xúc xả thành công' || status === 'Đã cập nhật hệ thống' || status === "Hoàn thiện hồ sơ") {
+        if (status === 'Kiểm tra thành công' || status === 'Đã cập nhật hệ thống' || status === "Hoàn thiện hồ sơ") {
             return <span className="tag text-success">{status}</span>;
         }
-        if (status === 'Xúc xả thất bại') {
+        if (status === 'Chuyển thanh tra') {
             return <span className="tag text-danger">{status}</span>;
         }
         if (status === 'Chờ Thanh tra') {
