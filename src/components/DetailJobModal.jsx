@@ -207,6 +207,7 @@ const DetailJobModal = (props) => {
                                 ? (
                                 <div>
                                     Serial đồng hồ thay thế: {jobData.NewMeter?.serial_number || 'Không tìm thấy'}
+                                    Serial đồng hồ lỗi: {jobData.OldMeter?.serial_number}
                                 </div>
                                 )
                                 : jobData.status === 'Chờ Thanh tra'
