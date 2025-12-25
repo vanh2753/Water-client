@@ -207,6 +207,8 @@ const DetailJobModal = (props) => {
                                 ? (
                                 <div>
                                     Serial đồng hồ thay thế: {jobData.NewMeter?.serial_number || 'Không tìm thấy'}
+                                </div>
+                                <div>
                                     Serial đồng hồ lỗi: {jobData.OldMeter?.serial_number}
                                 </div>
                                 )
