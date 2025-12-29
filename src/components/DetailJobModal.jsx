@@ -233,7 +233,7 @@ const DetailJobModal = (props) => {
                                 )
                             }
 
-                            <div>Số đọc đồng hồ: {jobData.meter_book_number || 'Không có'}</div>
+                            <div>Sổ đọc: {jobData.meter_book_number || 'Không có'}</div>
                             <div>Chỉ số đồng hồ: {jobData.meter_value || 'Không có'}</div>
                             <div>{renderMeterStatus(jobData)}</div>
 
@@ -256,7 +256,16 @@ const DetailJobModal = (props) => {
                             </div>
                             {
                                 jobData.status === 'Đã thay thế'
-                                    ? <div>Serial đồng hồ thay thế: {jobData.NewMeter?.serial_number}</div>
+                                     ? (
+                                    <div>
+                                        <div>
+                                        Serial đồng hồ thay thế: {jobData.NewMeter?.serial_number || 'Không tìm thấy'}
+                                        </div>
+                                        <div>
+                                        Serial đồng hồ lỗi: {jobData.OldMeter?.serial_number || 'Không tìm thấy'}
+                                        </div>
+                                    </div>
+                                    )
                                     : jobData.status === 'Chờ Thanh tra'
                                         ? <div>Serial đồng hồ lỗi: {jobData.OldMeter?.serial_number}</div>
                                         : jobData.status === 'Mới'
@@ -264,7 +273,7 @@ const DetailJobModal = (props) => {
                                             : <div>Serial đồng hồ hoạt động tốt: {jobData.OldMeter?.serial_number}</div>
                             }
 
-                            <div>Số đọc đồng hồ: {jobData.meter_book_number || 'Không có'}</div>
+                            <div>Số đọc: {jobData.meter_book_number || 'Không có'}</div>
                             <div>Chỉ số đồng hồ: {jobData.meter_value || 'Không có'}</div>
                             <div>{renderMeterStatus(jobData)}</div>
                         </div>
