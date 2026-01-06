@@ -36,12 +36,17 @@ instance.interceptors.response.use(
                 originalRequest.headers['Authorization'] = `Bearer ${newAccessToken}`;
                 return instance(originalRequest);
             } catch (err) {
-                if (err.response?.status === 401) {
-                    localStorage.removeItem('access_token');
-                    localStorage.removeItem('refresh_token');
-                    window.location.href = '/';
-                }
-                return Promise.reject(err);
+                // ✅ KHI REFRESH FAIL - XÓA HẾT VÀ REDIRECT
+                console.log('Refresh token failed - Clearing session...');
+
+                // Xóa toàn bộ localStorage (bao gồm Redux Persist)
+                localStorage.clear();
+
+                // Redirect về login
+                window.location.href = '/login';
+
+                // Return empty promise để stop vòng lặp
+                return new Promise(() => { });
             }
         }
 
