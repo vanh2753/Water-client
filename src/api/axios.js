@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { refreshToken } from './user-api';
+import { store } from '../redux/store';
+import { Logout } from '../redux/slices/userSlice';
 
 const instance = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
@@ -36,16 +38,16 @@ instance.interceptors.response.use(
                 originalRequest.headers['Authorization'] = `Bearer ${newAccessToken}`;
                 return instance(originalRequest);
             } catch (err) {
-                // ✅ KHI REFRESH FAIL - XÓA HẾT VÀ REDIRECT
-                console.log('Refresh token failed - Clearing session...');
+                // ✅ 1. Dispatch Logout để set isAuthenticated = false
+                store.dispatch(Logout());
 
-                // Xóa toàn bộ localStorage (bao gồm Redux Persist)
+                // ✅ 2. Xóa localStorage (clear Redux Persist)
                 localStorage.clear();
 
-                // Redirect về login
-                window.location.href = '/login';
+                // ✅ 3. Redirect về "/"
+                window.location.href = '/';
 
-                // Return empty promise để stop vòng lặp
+                // ✅ 4. Stop vòng lặp
                 return new Promise(() => { });
             }
         }
